@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="icon" href="https://cdn.glitch.global/e02e4e83-fec1-4a4b-9c3e-52ce40625bb1/logo2.png?v=1727992729225"/>
+    <link rel="apple-touch-icon" href="https://cdn.glitch.global/e02e4e83-fec1-4a4b-9c3e-52ce40625bb1/logo2.png?v=1727992729225">
+    
+    <title>Wordle Helper</title>
+
+    <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
+    <meta name="description" content="Wordle Helper / Guesser"/>
+
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  
+  <body onload="readWords()">
+    
+    <!-- header -->
+    <div class="header">
+      <!-- extra invisible dropdown to center title -->
+      <div class="dropdown" style="visibility: hidden; float: left">
+        <button class="dropbtn">Play Wordle</button>
+      </div>
+      
+      <a href="." id="header"><span>Wordle</span> <span>Helper</span></a>
+      
+      <div class="dropdown">
+        <button class="dropbtn">Play Wordle</button>
+        <div class="dropdown-content">
+          <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">NY Times</a>
+          <a href="https://wordlewebsite.com/wordle-unlimited" target="_blank">Unlimited </a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- hidden textbox to open keyboard on mobile -->
+    <input type="text" id="myTextField" value="" maxlength="0" style="left:-20px; position: fixed; width: 1px; height: 1px; margin: 0; padding:0" >
+    <button class="keyboardButton" type="button" onclick="focusKeyboard()">⌨</button>
+
+    
+    <!-- entry rows -->
+    <div id="entryRows" style="margin-left: 65px">
+      
+      <div class="row" style="visibility: hidden; display:none;">
+        <div class="outer-box"><input class="box box-appear" type="text" onclick="boxClick(this)" readonly></div>
+        <div class="outer-box"><input class="box box-appear" type="text" onclick="boxClick(this)" style="animation-delay: 0.1s;" readonly></div>
+        <div class="outer-box"><input class="box box-appear" type="text" onclick="boxClick(this)" style="animation-delay: 0.2s;" readonly></div>
+        <div class="outer-box"><input class="box box-appear" type="text" onclick="boxClick(this)" style="animation-delay: 0.3s;" readonly></div>
+        <div class="outer-box"><input class="box box-appear" type="text" onclick="boxClick(this)" style="animation-delay: 0.4s;" readonly></div>
+      </div>
+
+    </div>
+    
+    
+    <!-- win message -->
+    <div id="win" style="visibility: hidden; display:none; text-align: center">
+      <h2 id="congrats" class="pop">
+        <strong>Congratulations!</strong>
+      </h2>
+      <a id="reset" href="." style="color: #dddddd">Reset</a>
+    </div>
+    
+    
+    <!-- output -->
+    <div id="outputSpace" style="visibility: hidden; display:none; text-align: center">
+      <p id="txtArea"></p>
+    </div>
+    
+    <br><br>
+  </body>
+</html>
+
