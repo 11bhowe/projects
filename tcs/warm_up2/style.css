@@ -1,0 +1,361 @@
+:root {
+  --color-bg: #dddddd;
+  --blue: #36b7ff;
+  --dark-blue: #012d9c;
+  --gray: #6d6d6d;
+  --text-gray: #424242;
+  --training-data-box: var(--blue);
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+
+.footer {
+  justify-content: space-between;
+  margin: 20px 0px 0px 10px;
+  padding: 0px 0px 10px 3px;
+  width: 95%;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.footer a {
+  color: var(--text-gray);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+.footer p {
+  color: var(--text-gray);
+  cursor: default;
+}
+
+
+body {
+/*   font-family: HK Grotesk; */
+/*   font-family: Verdana, Sans-Serif; */
+/*   font-familt: Helvetica, Sans-Serif; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  margin: 0px;
+/*   align-items: center; */
+/*   justify-items: center; */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#main {
+  margin: 10px 25px 5px 25px;
+  font-weight: 500;
+  height: 100%;
+}
+
+.header {
+  padding: 8px;
+  text-align: center;
+  background: white;
+  color: var(--gray);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 3px var(--gray);
+}
+
+#header {
+  font-family: HK Grotesk;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: bolder;
+  text-decoration: none;
+  z-index: 1;
+  display: inline;
+  transition: 300ms;
+}
+
+#header:hover {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 575px) {
+  #header-left {
+    display: none !important;
+  }
+  #header-center {
+    text-align: right !important;
+    width: 70% !important;
+    float: left;
+    padding-right: 10px;
+  }
+}
+
+
+button,
+input {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: 600;
+  box-sizing: border-box;
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+  transition: 300ms;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px #999999;
+  background: var(--gray);
+  color: white;
+  border: 3px solid var(--gray);
+}
+
+button:hover {  
+  background: white;
+  color: var(--gray);
+  border: 3px solid white;
+}
+
+
+/* ///////////////////////// */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  display: block;
+  text-align: center;
+  line-height: 24px;
+  font-size: 18px;
+  color: var(--text-gray);
+  margin-top: 3px;
+  cursor: default;
+}
+
+#chart-container {
+  display: inline;
+  padding-left: 5%;
+  padding-right: 4%;
+  max-width: 630px;
+}
+
+#mse-container {
+  background: var(--dark-blue);
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  line-height: 25px;
+  min-width: 200px;
+  margin-left: 40px;
+  box-shadow: 0px 1px 5px #999999;
+}
+
+#feature-container {
+  display: inline;
+  padding-bottom: 80px;
+  min-width: 365px;
+  float: left;
+}
+
+@media only screen and (max-width: 950px) {
+  #chart-container {
+    max-width: 65%;
+  }
+}
+@media only screen and (max-width: 875px) {
+  #chart-container {
+    max-width: 60%;
+  }
+}
+@media only screen and (max-width: 830px) {
+  #chart-container {
+    max-width: 55%;
+  }
+}
+@media only screen and (max-width: 780px) {
+  #chart-container {
+    min-width: 60%;
+  }
+  #feature-container {
+    min-width: 315px;
+  }
+  .tooltiptext {
+    max-width: 40% !important;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #chart-container {
+    min-width: 70%;
+  }
+  .sep {
+    margin: 8px 0px !important;
+  }
+  #feature-container {
+    max-width: 20%;
+    min-width: 180px;
+  }
+  .tooltiptext {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #container {
+    display: inline;
+  }
+  #chart-container {
+    min-width: 80%;
+  }
+  .sep {
+    margin: -14px 0px !important;
+  }
+  #feature-container {
+    max-width: 80%;
+    min-width: 365px;
+    float: right;
+    margin-top: 25px;
+  }
+  .tooltiptext {
+    display: inline-block !important;
+    max-width: 190px !important;
+  }
+  #mse-container {
+    margin-top: 8px;
+  }
+  input[type="checkbox"] {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+  label {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .tooltiptext {
+    line-height: 12px;
+    vertical-align: middle;
+  }
+  #mse-container {
+    margin-left: 0px !important;
+  }
+  #feature-container {
+    padding-bottom: 50px !important;
+  }
+}
+@media only screen and (max-width: 390px) {
+  #feature-container {
+    padding-left: 10px;
+    margin-left: -15px;
+    margin-right: -20px;
+    min-width: 370px;
+  }
+}
+
+#checkAll {
+  vertical-align: middle;
+}
+
+label {
+  color: var(--text-gray);
+/*   margin: 15px 0px 0px 5px; */
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.sep {
+  margin: -14px 0px;
+}
+
+.loader {
+  margin-top: 170px;
+  border: 6px solid #ffffff;
+  border-radius: 50%;
+  border-top: 6px solid var(--blue);
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 0.7s linear infinite;
+  animation: spin 0.7s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.tooltip-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks containers vertically */
+    gap: 10px; /* Sets consistent spacing between tooltip-containers */
+}
+
+.tooltip-container {
+    display: flex;
+    align-items: center; /* Vertically aligns checkbox, label, and tooltip */
+    position: relative; /* Keeps everything aligned within the container */
+}
+
+.tooltiptext {
+    visibility: hidden;
+    max-width: 200px;
+    min-width: 130px;
+    min-height: 41px;
+    align-content: center;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    background: var(--gray);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-left: 10px; /* Ensures space between label and tooltip */
+    font-size: x-small;
+    display: inline-block;
+    position: relative; /* Keeps the ::after arrow positioned relative to tooltip */
+    cursor: default;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: -10px; /* Position the triangle on the left edge of the tooltip */
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent var(--gray) transparent transparent; /* Flip the arrow direction */
+}
+
+.tooltip-container:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.7;
+}
+

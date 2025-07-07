@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../img/vector-logo5.png" />
+  <link rel="apple-touch-icon" href="../img/vector-logo5.png" />
+
+  <title>Quantum Shadow Photography Reel</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+  
+<body>
+  <div class="header">
+    <div id="header-left" style="width: 20%; display: inline; float: left">
+      <img style="height: 30px; float: left;" src="../img/QxQ-logo.png">
+    </div>
+    <div id="header-center" style="width: 60%; display: inline">
+      <a href="." id="header">Quantum Shadow Photography Reel</a>
+    </div>
+    <div id="header-right" style="width: 20%; display: inline-block"></div> 
+  </div>
+  
+  
+  <div id="main">
+    <p style="font-weight: 600; line-height: 22px;">Upload your images, click &amp; drag to reorder them, then preview and download your video.</p>    
+    <p style="line-height: 22px;"><i>Using a Safari browser is recommended as Google Chrome may struggle to support larger image dimensions.</i></p>
+    <label for="imageUploader" class="upload-label" id="uploadLabel1">Upload Images</label>
+    <input type="file" id="imageUploader" multiple accept="image/*">
+    
+    <div id="durationField" style="display: none">
+      <label for="durationInput">Image Duration (seconds):</label>
+      <input type="number" id="durationInput" step="0.1" min="0.1" max="2" value="0.5" style="margin-bottom: 10px;"><br>
+      <label for="repeatInput">Repeat image cycle </label>
+      <input type="number" id="repeatInput" step="1" min="1" max="15" value="3">
+      <label for="repeatInput"> times.</label>
+    </div>
+    
+    <div id="imageList"></div>
+    
+    <label for="imageUploader2" class="upload-label" id="uploadLabel2" style="display: none">Add images + </label>
+    <input type="file" id="imageUploader2" multiple accept="image/*"><br><br>
+    
+    <div id="preview-div" style="display: none;">
+      <hr><br>
+      <button id="convertBtn" style="margin-bottom: 8px;">Preview Video</button><br>
+      <span style="font-size: small;"><i>(must preview any edits before downloading)</i></span>
+    </div>
+    
+    <canvas id="canvas" style="display: none; max-width: 90%;"></canvas>
+    
+    <div id="file-name-div" style="visibility: hidden; margin-top: 15px; margin-bottom: 12px;">
+      <label>Video File Name: </label>
+      <input type="text" id="file-name-input" placeholder="output.mp4">
+    </div>
+
+    <a id="downloadLink" style="visibility: hidden;" download="output.mp4">Download
+      <svg viewBox="0 0 24 24" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+    <br><br>
+  </div>
+  
+  <div class="footer" style="display: none;">
+    <img style="height: 25px; display: inline; float: left;" src="">
+    <p style="display: inline; float: left; margin: 5px 0 0 5px; font-size: small; "><a href="" target="_blank"> --- </a> --- </p>
+  </div>
+
+</body>
+</html>

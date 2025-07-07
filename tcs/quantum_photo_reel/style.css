@@ -1,0 +1,282 @@
+:root {
+  --color-bg: #dddddd;
+  --blue: #36b7ff;
+  --dark-blue: #012d9c;
+  --gray: #6d6d6d;
+  --text-gray: #424242;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+}
+
+
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+
+body {
+/*   font-family: HK Grotesk; */
+/*   font-family: Verdana, Sans-Serif; */
+/*   font-familt: Helvetica, Sans-Serif; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--text-gray);
+  margin: 0px;
+/*   align-items: center; */
+/*   justify-items: center; */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+#main {
+  margin: 25px;
+  margin-top: 5px;
+  font-weight: 500;
+  height: 100%;
+  text-align: center;
+}
+
+.header {
+  padding: 8px;
+  text-align: center;
+  background: white;
+  color: var(--gray);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 3px var(--gray);
+}
+
+#header {
+  font-family: HK Grotesk;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: bolder;
+  text-decoration: none;
+  z-index: 1;
+  display: inline;
+  transition: 300ms;
+}
+
+#header:hover {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+
+@media only screen and (max-width: 575px) {
+  .header {
+/*     transform: scale(1, 0.8); */
+    zoom: 90%;
+  }
+  #header-right {
+    display: none !important;
+  }
+  #header-left {
+/*     transform: scale(0.9, 0.9); */
+  }
+  #header-center {
+    text-align: right !important;
+    width: 80% !important;
+    float: left;
+    padding-right: 10px;
+/*     transform: scale(0.9, 0.9); */
+  }
+  
+  .draggableFileName {
+/*     min-width: 100px; */
+/*     max-width: 100px; */
+    min-width: 98px !important;
+    max-width: 98px !important;
+  }
+  
+  #imageList {
+/*     width: 265px; */
+    width: 260px !important;
+  }
+  
+  hr {
+    max-width: 85% !important;
+  }
+}
+
+
+.footer {
+  justify-content: space-between;
+  margin: 20px 0px 0px 10px;
+  padding: 0px 0px 10px 3px;
+  width: 95%;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.footer a {
+  color: var(--text-gray);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+.footer p {
+  color: var(--text-gray);
+  cursor: default;
+}
+
+
+#imageList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px auto;
+  width: 300px;
+}
+.image-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  background: #f9f9f9;
+  cursor: grab;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.image-item img {
+  width: 80px;
+/*   height: 70px; */
+  object-fit: cover;
+}
+.image-item.dragging {
+  background: #e0e0e0;
+  opacity: 0.8;
+}
+
+canvas {
+  border: 1px solid #cccccc;
+  margin: 20px auto;
+}
+#durationField {
+  margin: 20px 0;
+}
+#durationInput {
+  max-width: 50px;
+}
+.deleteBtn {
+  border: none;
+  background: none;
+  font-weight: 500;
+  float: right;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 0px;
+  width: 12px;
+  height: 12px;
+}
+.deleteBtn:hover {
+  transform: rotate(90deg);
+}
+
+svg {
+  fill: var(--text-gray);
+  stroke: none;
+}
+.deleteBtn:hover > svg {
+  fill: #b81f1f;
+  stroke: #b81f1f;
+}
+
+.draggableFileName {
+  min-width: 135px;
+  max-width: 135px;
+  text-align: left;
+  font-size: small;
+  overflow-wrap: break-word;
+}
+.itemNumber {
+  font-weight: bold;
+}
+
+#convertBtn {
+  background: white;
+  color: var(--text-gray);
+  border-radius: 6px;
+  padding: 2px 7px;
+  border: none;
+  box-shadow: 0px .2px 2px 0.3px #888888;
+  font-size: small;
+  text-decoration: none;
+}
+
+label.upload-label {
+  background: white;
+  color: var(--text-gray);
+  border-radius: 6px;
+  padding: 2px 7px;
+/*       border: 1px solid #ddd; */
+  border: none;
+  box-shadow: 0px .2px 2px 0.3px #888888;
+  font-size: small;
+  text-decoration: none;
+}
+label.upload-label:hover, #convertBtn:hover {
+/*   box-shadow: 0px 0px 2px 0.3px #888888 inset; */
+  box-shadow: 0px .2px 2px 0.6px var(--blue);
+}
+input[type="file"] {
+  visibility: hidden;
+  display: none;
+}
+input[type="number"], input[type="text"]  {
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+  padding-left: 4px;
+  min-height: 19px;
+}
+input[type="text"] {
+  padding-left: 3px;
+} 
+
+hr {
+  max-width: 70%;
+/*   color: var(--text-gray); */
+  border: 0.8px solid #888888;
+  border-radius: 1px;
+}
+
+#downloadLink {
+  font-family: HK Grotesk;
+  font-size: larger;
+  color: var(--dark-blue);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+#downloadLink:hover {
+  color: var(--blue);
+  text-shadow: 0px 0px 2px white;
+}
+#downloadLink > svg {
+  translate: -5px 2px;
+  stroke: var(--dark-blue);
+  stroke-width: 2.5;
+}
+#downloadLink:hover > svg {
+  stroke: var(--blue);
+/*   filter: drop-shadow( 0px 0px 2px white); */
+}

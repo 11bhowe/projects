@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../img/vector-logo5.png" />
+    <link rel="apple-touch-icon" href="../img/vector-logo5.png" />
+
+<!--     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    
+    <title>TRAIN Warm-Up</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  
+  <body onload="readData()">
+    
+    <div class="header">
+      <div style="width: 30%; display: inline; float: left">
+        <img style="height: 30px; float: left;" src="../img/TRAIN logo w transparent background.png">
+      </div>
+      <div id="header-center" style="width: 60%; display: inline">
+        <a href="." id="header">Week 9 Warm-Up</a>
+      </div>
+      <div id="header-left" style="width: 30%; display: inline-block"></div>
+      
+    </div>
+    
+    
+    <div id="main">
+      <span>You are training a Machine Learning model to predict life expectancy based on a number of factors.</span>
+      <span>Perform <b>feature selection</b> by toggling on/off different features until you've produced a model that can make the most accurate predicitons.</span>
+
+      <div class="center" id="loading-container">
+        <div class="loader"></div>
+      </div>
+      
+      <div id="container" class="center" style="margin-top: 20px;">
+        
+        <div id="chart-container">
+          <canvas id="myChart" width="500" height="500"></canvas>
+          
+          <div class="center">
+            <div id="mse-container" style="visibility: hidden;"><b>Root Mean Square Error</b><br>0.0</div>
+          </div>
+        </div>
+        
+        <div id="feature-container"></div>
+        
+      </div>
+
+    </div>
+    
+    <div class="footer" style="display: none;">
+      <img style="height: 25px; display: inline; float: left;" src="">
+      <p style="display: inline; float: left; margin: 5px 0 0 5px; font-size: small; "><a href="" target="_blank"> --- </a> --- </p>
+    </div>
+    
+  </body>
+</html>
