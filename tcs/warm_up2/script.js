@@ -10,7 +10,7 @@ let myChart;
 
 let feature_abbrs = ['Country','Region','Year','Infant_deaths','Under_5_deaths','Adult_mortality','Alcohol','HepB','Measles','BMI','Polio','Diphtheria','HIV','GDP','Pop','Thinness_10_to_19','Thinness_5_to_9','Schooling','Developed','Developing'];
 let feature_names = ['Country','Region','Year','Infant Mortality', 'Child Mortality','Adult Mortality','Alcohol Consumption','Hepatitis B','Measles','BMI','Polio','Diphtheria','HIV','GDP Per Capita','Population','Thinness in 10-19 yr olds','Thinness in 5-9 yr olds','Years of School','Development Status','Developing Economy'];
-let features_to_exclude = ['Thinness_10_to_19','Thinness_5_to_9','Developing'];
+let features_to_exclude = ['Country','Thinness_10_to_19','Thinness_5_to_9','Developing'];
 let feature_tooltips = [
   'Name of the country, numerically encoded, in alphabetical order.',
   'Geographic region of the country (Asia, North America, etc), numerically encoded, in alphabetical order.',

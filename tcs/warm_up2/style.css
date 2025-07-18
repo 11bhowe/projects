@@ -54,14 +54,9 @@
 
 
 body {
-/*   font-family: HK Grotesk; */
-/*   font-family: Verdana, Sans-Serif; */
-/*   font-familt: Helvetica, Sans-Serif; */
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--color-bg);
   margin: 0px;
-/*   align-items: center; */
-/*   justify-items: center; */
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -314,14 +309,14 @@ label {
 
 .tooltip-wrapper {
     display: flex;
-    flex-direction: column; /* Stacks containers vertically */
-    gap: 10px; /* Sets consistent spacing between tooltip-containers */
+    flex-direction: column; /* stacks containers vertically */
+    gap: 10px;
 }
 
 .tooltip-container {
     display: flex;
-    align-items: center; /* Vertically aligns checkbox, label, and tooltip */
-    position: relative; /* Keeps everything aligned within the container */
+    align-items: center; 
+    position: relative; 
 }
 
 .tooltiptext {
@@ -336,10 +331,10 @@ label {
     color: white;
     padding: 4px 8px;
     border-radius: 5px;
-    margin-left: 10px; /* Ensures space between label and tooltip */
+    margin-left: 10px; 
     font-size: x-small;
     display: inline-block;
-    position: relative; /* Keeps the ::after arrow positioned relative to tooltip */
+    position: relative; /* keeps the ::after arrow positioned relative to tooltip */
     cursor: default;
 }
 
@@ -347,11 +342,11 @@ label {
     content: " ";
     position: absolute;
     top: 50%;
-    left: -10px; /* Position the triangle on the left edge of the tooltip */
+    left: -10px;
     transform: translateY(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: transparent var(--gray) transparent transparent; /* Flip the arrow direction */
+    border-color: transparent var(--gray) transparent transparent; /* flip the arrow direction */
 }
 
 .tooltip-container:hover .tooltiptext {
@@ -359,3 +354,29 @@ label {
     opacity: 0.7;
 }
 
+/* Hint tooltip */
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip2 #hinttooltip {
+  visibility: hidden;
+  width: 120px;
+  text-align: center;
+  background: var(--gray);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: small;
+  
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip2:hover #hinttooltip {
+  visibility: visible;
+}
